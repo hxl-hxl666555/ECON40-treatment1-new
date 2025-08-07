@@ -241,6 +241,13 @@
     }
 
     groupIds.forEach(handleGroup);
+    groupIds.forEach(id => {
+      const selected = document.querySelector(`#${id} .selected`);
+      if (selected) {
+        selections[id] = parseFloat(selected.getAttribute('data-price'));
+      }
+    });
+    updateTotal();
 
     function submitDesktopConfig() {
       const config = {};
@@ -272,3 +279,4 @@
 
 </body>
 </html>
+
